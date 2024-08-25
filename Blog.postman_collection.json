@@ -1,0 +1,511 @@
+{
+	"info": {
+		"_postman_id": "a3f1c570-0487-4b00-8f9c-3d0748de20af",
+		"name": "Blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16935026"
+	},
+	"item": [
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "jfljiojlf974874656",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Abdul Mannaf\",\r\n    \"email\": \"idbmannaf@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root}}/registration",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "jfljiojlf974874656",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"email\": \"idbmannaf@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root}}/login",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "jfljiojlf974874656",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Business\",\r\n    \"description\":\"Lorem ipsum\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root}}/categories",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"categories"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Sports",
+							"disabled": true
+						},
+						{
+							"key": "Description",
+							"value": "Sports",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Category",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "jfljiojlf974874656",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sports\",\r\n    \"description\":\"Lorem ipsum\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root}}/categories",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Category",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "jfljiojlf974874656",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sports\",\r\n    \"description\":\"Lorem ipsum\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root}}/categories/6694ea0b1f35298b15fe3f7e",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"categories",
+						"6694ea0b1f35298b15fe3f7e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete A Category",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "jfljiojlf974874656",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sports\",\r\n    \"description\":\"Lorem ipsum\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root}}/categories/6694ea90d93c99392d171abd",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"categories",
+						"6694ea90d93c99392d171abd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Blog",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "jfljiojlf974874656",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Do It",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "First Description",
+							"type": "text"
+						},
+						{
+							"key": "postedBy",
+							"value": "6694ee52ff36159e9377a8f1",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "669501d9a04f58404168b402",
+							"type": "text"
+						},
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "tags",
+							"value": "test,no,etc,se,se",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{root}}/blogs",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Post",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "jfljiojlf974874656",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{root}}/blogs",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update A Blog",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "jfljiojlf974874656",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Updated Title",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Updated Description",
+							"type": "text"
+						},
+						{
+							"key": "postedBy",
+							"value": "6694ee52ff36159e9377a8f1",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "6694fa4076ae5f0d1b6b7b70",
+							"type": "text"
+						},
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/C:/Users/hp/Desktop/mannaf.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{root}}/blogs-update/6694fad076ae5f0d1b6b7b7b",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"blogs-update",
+						"6694fad076ae5f0d1b6b7b7b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Blog",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "jfljiojlf974874656",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Updated Title",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Updated Description",
+							"type": "text"
+						},
+						{
+							"key": "postedBy",
+							"value": "6694ee52ff36159e9377a8f1",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "6694fa4076ae5f0d1b6b7b70",
+							"type": "text"
+						},
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/C:/Users/hp/Desktop/mannaf.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{root}}/blogs-update/6694fad076ae5f0d1b6b7b7b",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"blogs-update",
+						"6694fad076ae5f0d1b6b7b7b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category With Posts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "jfljiojlf974874656",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"First Title\",\r\n    \"description\":\"Lorem ipsum\",\r\n    \"postedBy\":\"6682dc63b02d044e2728c4a8\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root}}/category-with-posts",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"category-with-posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post By Category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "jfljiojlf974874656",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"First Title\",\r\n    \"description\":\"Lorem ipsum\",\r\n    \"postedBy\":\"6682dc63b02d044e2728c4a8\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root}}/category-with-posts",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"category-with-posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Author With Posts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "jfljiojlf974874656",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"First Title\",\r\n    \"description\":\"Lorem ipsum\",\r\n    \"postedBy\":\"6682dc63b02d044e2728c4a8\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root}}/author-with-posts",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"author-with-posts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

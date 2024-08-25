@@ -25,6 +25,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage })
 
+app.get('/', function (req, res, next) {
+    res.send("Hello World!")
+})
+
 app.post('/registration', secureApi, registrationController)
 app.post('/login', secureApi, loginController)
 
